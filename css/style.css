@@ -22,6 +22,16 @@ body {
     background-color: rgb(14,14,14);
 }
 
+.card {
+    transition: 0.25s;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 7.5px white;
+}
+
 #genre {
     height: 45px;
 }

@@ -31,7 +31,7 @@
                 </figure>
     
                 <form action="index.php" method="GET">
-                    <select v-model="genre" @change="changeGenre" name="genre" id="genre" class="form-select mt-3">
+                    <select v-model="genre" @change="changeGenre" name="genre" id="genre" class="form-select">
                         <option selected value="">All </option>
                         <option v-for="genre in genres" :key="genre" :value="genre">{{genre}}</option>
                       </select>
