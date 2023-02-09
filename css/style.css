@@ -21,3 +21,12 @@ body {
     height: calc(100vh - 125px);
     background-color: rgb(14,14,14);
 }
+
+.genre > * {
+    height: 10px;
+    width: 75px;
+}
+
+#logo {
+    height: 50px;
+}

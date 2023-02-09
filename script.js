@@ -5,8 +5,8 @@ const apiUri = 'http://localhost/php-dischi-json/index.php';
 const app = createApp({
     data (){
         return {
+            genre : '',
             discs: [],
-
               
         }
     },
@@ -14,6 +14,20 @@ const app = createApp({
         axios.get(apiUri).then(res => {
             this.discs =  res.data;
         })
+    },
+    methods: {
+        changeGenre(){
+            const filteredUri = `${apiUri}?genre=${this.genre}`
+            axios.get(filteredUri).then(res =>{
+                this.discs = res.data;
+            })
+
+            if (this.genre === ''){
+                axios.get(apiUri).then(res =>{
+                    this.discs = res.data;
+                })
+            }
+        }
     }
 });
 
