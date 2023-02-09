@@ -1,0 +1,23 @@
+/* Css Reset  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Generics  */
+
+header {
+    height: 125px;
+}
+
+body {
+    height: calc(100vh - 125px);
+    background-color: rgb(14,14,14);
+}
