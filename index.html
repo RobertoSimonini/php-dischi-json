@@ -40,16 +40,25 @@
         </header>
             <div class="container py-5">
                 <div class="row g-5">
-                    <div v-for="disc in discs" :key="disc.title" class="col-4">
-                        <div class="card text-center bg-dark text-white p-5">
+                    <div v-for="(disc, i) in discs" :key="disc.title" class="col-4">
+                        <div @click="toggleStatusDescription(i)" class="card text-center bg-dark text-white p-5">
                             <img :src="disc.poster" class="card-img-top" :alt="disc.title">
                             <div class="card-body">
-                              <h5 class="card-title">{{disc.title}}</h5>
-                                <article class="py-2">
-                                    {{disc.author}}
-                                </article>
-                                <div>
-                                    <strong>{{disc.year}}</strong>
+                                <div class="description" v-if="disc.visibility">
+                                    <div>
+                                        {{ disc }}
+                                    </div>
+                                </div>
+                                <div v-else>
+                                    <h5 class="card-title">{{disc.title}}</h5>
+                                      <article class="py-2">
+                                          {{disc.author}}
+                                      </article>
+                                      <div>
+                                          <strong>{{disc.year}}</strong>
+                                      </div>
+                                      <div>
+                                      </div>
                                 </div>
                             </div>
                           </div>

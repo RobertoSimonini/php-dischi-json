@@ -7,7 +7,7 @@ const app = createApp({
         return {
             genre : '',
             discs: [],
-            genres: ['rock','pop', 'jazz', 'metal',]
+            genres: ['rock','pop', 'jazz', 'metal',],
               
         }
     },
@@ -16,6 +16,7 @@ const app = createApp({
             this.discs =  res.data;
         })
     },
+
     methods: {
         changeGenre(){
             const filteredUri = `${apiUri}?genre=${this.genre}`
@@ -28,7 +29,11 @@ const app = createApp({
                     this.discs = res.data;
                 })
             }
+        },
+        toggleStatusDescription(i){
+            this.discs[i].visibility = !this.discs[i].visibility;
         }
+
     }
 });
 
