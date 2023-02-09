@@ -25,21 +25,20 @@
 <body>
     <div id="root">
         <header class="bg-dark">
-
-            <figure>
-                <img src="img/logo.png" alt="" class="img-fluid" id="logo">
-            </figure>
-
-            <form action="index.php" method="GET">
-                <select v-model="genre" @change="changeGenre" name="genre" class="form-select mt-3 genre w-25">
-                    <option selected value="">All </option>
-                    <option>rock</option>
-                    <option>Two</option>
-                    <option>Three</option>
-                  </select>
-            </form>
+            <div class="container h-100 d-flex justify-content-between align-items-center">
+                <figure>
+                    <img src="img/logo.png" alt="" class="img-fluid" id="logo">
+                </figure>
+    
+                <form action="index.php" method="GET">
+                    <select v-model="genre" @change="changeGenre" name="genre" id="genre" class="form-select mt-3">
+                        <option selected value="">All </option>
+                        <option v-for="genre in genres" :key="genre" :value="genre">{{genre}}</option>
+                      </select>
+                </form>
+            </div>
         </header>
-            <div class="container p-5">
+            <div class="container py-5">
                 <div class="row g-5">
                     <div v-for="disc in discs" :key="disc.title" class="col-4">
                         <div class="card text-center bg-dark text-white p-5">

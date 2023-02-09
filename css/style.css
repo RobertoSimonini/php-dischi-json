@@ -22,11 +22,10 @@ body {
     background-color: rgb(14,14,14);
 }
 
-.genre > * {
-    height: 10px;
-    width: 75px;
+#genre {
+    height: 45px;
 }
 
 #logo {
-    height: 50px;
+    height: 75px;
 }

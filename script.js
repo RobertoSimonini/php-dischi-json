@@ -7,6 +7,7 @@ const app = createApp({
         return {
             genre : '',
             discs: [],
+            genres: ['rock','pop', 'jazz', 'metal',]
               
         }
     },
