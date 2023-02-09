@@ -29,14 +29,18 @@
         </header>
         <body>
             <div class="container p-5">
-                <div class="row g-4">
-                    <div v-for="disc in discs" class="col-4">
-                        <div class="card" style="width: 18rem;">
-                            <img :src="disc.poster" class="card-img-top" alt="...">
+                <div class="row g-5">
+                    <div v-for="disc in discs" :key="disc.title" class="col-4">
+                        <div class="card text-center bg-dark text-white p-5">
+                            <img :src="disc.poster" class="card-img-top" :alt="disc.title">
                             <div class="card-body">
                               <h5 class="card-title">{{disc.title}}</h5>
-                              
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <article class="py-2">
+                                    {{disc.author}}
+                                </article>
+                                <div>
+                                    <strong>{{disc.year}}</strong>
+                                </div>
                             </div>
                           </div>
                     </div>  
